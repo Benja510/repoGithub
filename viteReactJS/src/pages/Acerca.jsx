@@ -1,28 +1,18 @@
+import { useAlumnoContext } from "../context/AlumnoContext";
+
 function Acerca() {
+  // Extraemos el objeto "alumno" del contexto
+  const { alumno } = useAlumnoContext();
+
   return (
     <div>
       <h1>Acerca de mí</h1>
-
-      <p><strong>Nombre:</strong> Benjamin Sandoval</p>
-      <p><strong>Carrera:</strong> Licenciatura en Informatica</p>
-
-      <p>
-        Soy estudiante interesado en el desarrollo web. Me gusta aprender nuevas
-        tecnologías y crear aplicaciones funcionales.
-      </p>
-
-      <h3>Habilidades</h3>
       <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <li><strong>Nombre:</strong> {alumno.nombre}</li>
+        <li><strong>Carrera:</strong> {alumno.carrera}</li>
+        <li><strong>Grupo:</strong> {alumno.grupo}</li>
+        <li><strong>Semestre:</strong> {alumno.semestre}</li>
       </ul>
-
-      <img
-        src="https://via.placeholder.com/150"
-        alt="Foto de perfil"
-      />
     </div>
   );
 }
